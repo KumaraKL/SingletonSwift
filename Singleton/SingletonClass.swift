@@ -11,7 +11,23 @@ import UIKit
 class SingletonClass: NSObject {
     private var dbNAme: String
     
+    //----------------Singleton instance-----------------------------
+
     static let sharedInstance = SingletonClass()
+    
+    //----------------OR---------------------------------------------
+    
+   /* //Singleton Instance Using Struct
+     //static struct variables are initialized both lazy and wrapped in dispatch_once
+    class var sharedInstance :SingletonClass {
+        struct Singleton {
+            static let instance = SingletonClass()
+        }
+        
+        return Singleton.instance
+    }
+    */
+    
     private  override init() {
         // ...
         print("Intialising defaults.. ")

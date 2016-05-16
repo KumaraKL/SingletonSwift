@@ -1,2 +1,2 @@
 # SingletonSwift
-Single Instance with initialiser
+Singleton Instance with initialiser
