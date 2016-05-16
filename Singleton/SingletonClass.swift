@@ -9,30 +9,20 @@
 import UIKit
 
 class SingletonClass: NSObject {
-    private var success: String
-    private var userId: String
-    private var name: String
+    private var dbNAme: String
     
-    class var sharedInstance : SingletonClass {
-        struct Singleton {
-            static let instance = SingletonClass()
-        }
-        return Singleton.instance
+    static let sharedInstance = SingletonClass()
+    private  override init() {
+        // ...
+        print("Intialising defaults.. ")
+        // Do your initialisation here
+        dbNAme = "myDB"
     }
     
-     init(success: String, userId: String, name: String, gender:  String, email: String)
-     {
-        self.success = success
-        self.userId = userId
-        self.name = name
-
-        }
-    convenience init(dictionary: [String:AnyObject]) {
-        let success = dictionary["success"] as? String
-        let userId = dictionary["userId"] as? String
-        let name = dictionary["name"] as? String
-      
-        //self.init(success: success!, userId: userId!, name: name!,  gender: gender!, email: email!, )
+    // func to test with the use of SingleTon instance
+    func getList() -> Any? {
+        let anyItem: Any?
+        anyItem = "asd"
+        return anyItem
     }
-    
 }
